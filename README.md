@@ -14,7 +14,8 @@ A concatenated output string can be generated or regenerated at any point in
 This substancially defeats traditional, iterative concatentation which runs in
 `O(n^2)`.
 
-This implementation is not thread-safe.
+This implementation is not thread-safe, uses unbounded iteration (for now) and
+does not (ever) offer any form of input sanitization.
 
 ## Example
 
@@ -30,7 +31,7 @@ sb_appendf(sb, "What is your favorite color?\n -> %s\n\n", "Blue");
 sb_append(sb, "Right, off you go");
 
 // print
-str = sb_concat(sb)
+str = sb_concat(sb);
 puts(str);
 
 // clean up
