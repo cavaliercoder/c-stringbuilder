@@ -17,9 +17,11 @@ typedef struct _StringBuilder {
 } StringBuilder;
 
 StringBuilder	*sb_create();
+int				sb_empty(StringBuilder *sb);
 int				sb_append(StringBuilder *sb, const char *str);
 int				sb_appendf(StringBuilder *sb, const char *format, ...);
 char			*sb_concat(StringBuilder *sb);
+void 			sb_reset(StringBuilder *sb);
 void			sb_free(StringBuilder *sb);
 
 #endif
